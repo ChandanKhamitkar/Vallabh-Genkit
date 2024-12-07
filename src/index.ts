@@ -12,7 +12,8 @@ import { prompt } from "@genkit-ai/dotprompt";
 import { gemini15Flash } from "@genkit-ai/googleai";
 import { dotprompt } from "@genkit-ai/dotprompt";
 import { defineSecret } from "firebase-functions/params";
-const googleAIapiKey = defineSecret("GOOGLE_GENAI_API_KEY");
+const googleAIapiKey = process.env.GOOGLE_GENAI_API_KEY;
+console.log('key = ', googleAIapiKey);
 
 interface TimeOfDay {
     hour: number;
@@ -94,7 +95,7 @@ configureGenkit({
         // by passing in a config object; if you don't, the Google AI plugin uses
         // the value from the GOOGLE_GENAI_API_KEY environment variable, which is
         // the recommended practice.
-        googleAI({ apiKey: "AIzaSyBzykxoGDQMDXGdy7f2kf8xy5N-Fcrv3jQ" }),
+        googleAI({ apiKey: "AIzaSyBoz16J2ZX8Am3iDYCAzATRnDM_JcH_SAo" }),
         dotprompt({ dir: "prompts" })
     ],
     // Log debug output to tbe console.
